@@ -12,7 +12,7 @@ GGUF-quantized Flux text to image with LoRA tag loading and optional background 
 
 ### Files
 
-* `SE_FLUX_txt2img_v21_API.json`: Editable version for modifying in ComfyUI
+* `SE_FLUX_txt2img_v21.json`: Editable version for modifying in ComfyUI
 * `SE_FLUX_txt2img_v21_ST.json`: Placeholder version for use in SillyTavern
 
 ### Notes
@@ -21,7 +21,7 @@ GGUF-quantized Flux text to image with LoRA tag loading and optional background 
 - **VAE**: Flux VAE such as `ae.safetensors`
 - Flux CLIPs `clip_l.safetensors` and `t5/google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors` must be in `clips`
 - **LoRA tags**: specify LoRAs as tags in the prompt e.g. `<lora:LoRA_Filename:0.8>`
-- **`%bgr_threshold%`**: background removal threshold, set between 0.0 (off) and about 0.5
+- **background removal**: add custom placeholder `%bgr_threshold%`, set between 0.0 (off) and about 0.5
 
 ### Replacements:
 
@@ -54,7 +54,7 @@ GGUF-quantized Flux image to image with LoRA tag loading and optional background
 
 ### Files
 
-* `SE_FLUX_img2img_v21_API.json`: Editable version for modifying in ComfyUI
+* `SE_FLUX_img2img_v21.json`: Editable version for modifying in ComfyUI
 * `SE_FLUX_img2img_v21_ST.json`: Placeholder version for use in SillyTavern
 
 ### Notes
@@ -64,7 +64,7 @@ GGUF-quantized Flux image to image with LoRA tag loading and optional background
 - Flux CLIPs `clip_l.safetensors` and `t5/google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors` must be in `clips`
 - **Source image**: the current character avatar is the source image
 - **LoRA tags**: specify LoRAs as tags in the prompt e.g. `<lora:LoRA_Filename:0.8>`
-- **`%bgr_threshold%`**: background removal threshold, set between 0.0 (off) and about 0.5
+- **background removal**: add custom placeholder `%bgr_threshold%`, set between 0.0 (off) and about 0.5
 
 ### Replacements:
 
@@ -101,13 +101,13 @@ SD text to image with LoRA tag loading and optional background removal
 
 ### Files
 
-* `SE_SD_txt2img_v21_API.json`: Editable version for modifying in ComfyUI
+* `SE_SD_txt2img_v21.json`: Editable version for modifying in ComfyUI
 * `SE_SD_txt2img_v21_ST.json`: Placeholder version for use in SillyTavern
 
 ### Notes
 
   - **LoRA tags**: specify LoRAs as tags in the prompt e.g. `<lora:LoRA_Filename:0.8>`
-  - **`%bgr_threshold%`**: background removal threshold, set between 0.0 (off) and about 0.5
+  - **background removal**: add custom placeholder `%bgr_threshold%`, set between 0.0 (off) and about 0.5
 
 ### Replacements:
 
@@ -137,14 +137,14 @@ SD image to image with LoRA tag loading and optional background removal
 
 ### Files
 
-* `SE_SD_img2img_v21_API.json`: Editable version for modifying in ComfyUI
+* `SE_SD_img2img_v21.json`: Editable version for modifying in ComfyUI
 * `SE_SD_img2img_v21_ST.json`: Placeholder version for use in SillyTavern
 
 ### Notes
 
 - **Source image**: the current character avatar is the source image
 - **LoRA tags**: specify LoRAs as tags in the prompt e.g. `<lora:LoRA_Filename:0.8>`
-- **`%bgr_threshold%`**: background removal threshold, set between 0.0 (off) and about 0.5
+- **background removal**: add custom placeholder `%bgr_threshold%`, set between 0.0 (off) and about 0.5
 
 ### Replacements:
 
