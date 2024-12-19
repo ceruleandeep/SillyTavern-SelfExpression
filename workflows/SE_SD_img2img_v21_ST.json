@@ -1,0 +1,173 @@
+{
+  "5": {
+    "inputs": {
+      "seed": "%seed%",
+      "steps": "%steps%",
+      "cfg": "%scale%",
+      "sampler_name": "%sampler%",
+      "scheduler": "%scheduler%",
+      "denoise": "%denoise%",
+      "model": [
+        "90",
+        0
+      ],
+      "positive": [
+        "22",
+        0
+      ],
+      "negative": [
+        "112",
+        0
+      ],
+      "latent_image": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "SD img2img v21 -ceruleandeep"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "111",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "22": {
+    "inputs": {
+      "text": [
+        "90",
+        2
+      ],
+      "clip": [
+        "90",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Encode Prompt"
+    }
+  },
+  "34": {
+    "inputs": {
+      "filename_prefix": "SillyTavern",
+      "images": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "90": {
+    "inputs": {
+      "text": "%prompt%",
+      "model": [
+        "111",
+        0
+      ],
+      "clip": [
+        "111",
+        1
+      ]
+    },
+    "class_type": "LoraTagLoader",
+    "_meta": {
+      "title": "Load LoRA Tag"
+    }
+  },
+  "97": {
+    "inputs": {
+      "image": "%char_avatar%"
+    },
+    "class_type": "ETN_LoadImageBase64",
+    "_meta": {
+      "title": "Load Image (Base64)"
+    }
+  },
+  "98": {
+    "inputs": {
+      "mode": "resize",
+      "supersample": "true",
+      "resampling": "lanczos",
+      "rescale_factor": 2,
+      "resize_width": "%width%",
+      "resize_height": "%height%",
+      "image": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "Image Resize",
+    "_meta": {
+      "title": "Resize image"
+    }
+  },
+  "99": {
+    "inputs": {
+      "pixels": [
+        "98",
+        0
+      ],
+      "vae": [
+        "111",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "111": {
+    "inputs": {
+      "ckpt_name": "%model%"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "112": {
+    "inputs": {
+      "text": "%negative_prompt%",
+      "clip": [
+        "90",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "113": {
+    "inputs": {
+      "threshold": "%bgr_threshold%",
+      "torchscript_jit": "default",
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "InspyrenetRembgAdvanced",
+    "_meta": {
+      "title": "Inspyrenet Rembg Advanced"
+    }
+  }
+}

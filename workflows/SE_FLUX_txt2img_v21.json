@@ -1,0 +1,160 @@
+{
+  "5": {
+    "inputs": {
+      "seed": 916696280465920,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1.0,
+      "model": [
+        "90",
+        0
+      ],
+      "positive": [
+        "22",
+        0
+      ],
+      "negative": [
+        "35",
+        0
+      ],
+      "latent_image": [
+        "111",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "SE v21 -ceruleandeep"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "8": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "22": {
+    "inputs": {
+      "text": [
+        "90",
+        2
+      ],
+      "clip": [
+        "90",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Encode Prompt"
+    }
+  },
+  "34": {
+    "inputs": {
+      "filename_prefix": "SillyTavern",
+      "images": [
+        "112",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "35": {
+    "inputs": {
+      "conditioning": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "ConditioningZeroOut"
+    }
+  },
+  "50": {
+    "inputs": {
+      "unet_name": "FLUX1/flux1-schnell-Q4_K_S.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  },
+  "52": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5/google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "90": {
+    "inputs": {
+      "text": "fruit bowl",
+      "model": [
+        "50",
+        0
+      ],
+      "clip": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "LoraTagLoader",
+    "_meta": {
+      "title": "Load LoRA Tag"
+    }
+  },
+  "111": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "112": {
+    "inputs": {
+      "threshold": 0.5,
+      "torchscript_jit": "default",
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "InspyrenetRembgAdvanced",
+    "_meta": {
+      "title": "Inspyrenet Rembg Advanced"
+    }
+  }
+}
